@@ -1,3 +1,15 @@
-/* TODO (optional): Define styles for dark mode */
+/* DarkMode.module.css */
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
 
-/* TODO (optional): Ensure text and background colors adjust for dark mode */
+.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Optional: style links differently in dark mode */
+.dark a {
+  color: #bb86fc;
+}
