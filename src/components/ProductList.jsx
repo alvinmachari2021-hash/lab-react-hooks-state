@@ -12,24 +12,40 @@ const ProductList = ({ category, cart, setCart }) => {
     return product.category === category;
   });
 
-  const addToCart = (product) => {
-    if (product.inStock) {
-      setCart([...cart, product]);
-    } else {
-      alert(`${product.name} is out of stock!`);
+  // ✅ Add all filtered products to cart
+  const addAllToCart = () => {
+    const availableProducts = filteredProducts.filter((p) => p.inStock);
+    if (availableProducts.length === 0) {
+      alert("No products in stock to add!");
+      return;
     }
+    setCart([...cart, ...availableProducts]);
   };
 
   return (
     <div>
       <h2>Available Products</h2>
-      {filteredProducts.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          addToCart={addToCart}
-        />
-      ))}
+      {filteredProducts.length === 0 ? (
+        <p>no products available</p>
+      ) : (
+        filteredProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            addToCart={() => setCart([...cart, product])}
+          />
+        ))
+      )}
+
+      {/* ✅ Button to add all at once */}
+      <button onClick={addAllToCart}>Add All to Cart</button>
+
+      <h3>Cart ({cart.length})</h3>
+      <ul>
+        {cart.map((item) => (
+          <li key={item.id}>{item.name} - {item.price}</li>
+        ))}
+      </ul>
     </div>
   );
 };

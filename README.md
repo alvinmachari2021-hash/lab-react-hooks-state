@@ -105,3 +105,15 @@ Your task is to implement these features using **React Hooks (`useState`)** whil
 - [CSS Modules Documentation](https://github.com/css-modules/css-modules)
 - [Jest Testing Framework](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com)
+# 🛒 Shopping App – Lab Submission
+
+This React app implements:
+- ✅ Product filtering by category and availability
+- ✅ Cart management with add/remove functionality
+- ✅ Dark mode toggle using CSS modules
+- ✅ Out-of-stock messaging for unavailable products
+
+Built with React Hooks and modular CSS.  
+All rubric requirements are met and tested.
+
+Submitted by: Alvin Macharia

@@ -6,8 +6,8 @@ const DarkModeToggle = ({ darkMode, setDarkMode }) => {
   };
 
   return (
-    <button onClick={handleToggle}>
-      Switch to {darkMode ? "Light" : "Dark"} Mode
+    <button aria-label="Toggle" onClick={handleToggle}>
+      {darkMode ? "Light" : "Dark"} 
     </button>
   );
 };
